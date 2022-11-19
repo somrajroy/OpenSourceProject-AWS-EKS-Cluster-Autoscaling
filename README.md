@@ -9,7 +9,7 @@ This repo demonstrates the cluster autoscaling feature of K8S. Together with HPA
 * [This official AWS Documentation mentions the steps to implement EKS Cluster Autoscaling. In this article we will use Kubernetes Cluster Autoscaler](https://docs.aws.amazon.com/eks/latest/userguide/autoscaling.html) <br/>
 * Some steps does not work properly from the above documentation which will be highlighted here <br/>
 #### Steps for Cluster Autoscaling with Kubernetes Cluster Autoscaler <br/>
-
+* Region us-east-1 gives some issues with availability zones. It maybe convinient to choose some other AWS region. Here us-west-2 is chosen <br/>
 * Create a cluster with below command. It would create 2 m5.large EC2 instances in region configured in your CLI (AWS configure).<br/>
   $ eksctl create cluster --name my-cluster --version 1.23 --managed --asg-access <br/>
 * Please complete the prerequisites as mentioned in official AWS documentation shared above. <br/>
