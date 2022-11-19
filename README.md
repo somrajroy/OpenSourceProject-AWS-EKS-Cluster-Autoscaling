@@ -35,7 +35,7 @@ This repo demonstrates the cluster autoscaling feature of K8S. Together with HPA
 * Check the activities tab in the autoscaling group and it can be seen that new instances are created. It checks the cluster load every 10 seconds <br/>
 * In few mins it can be seen in EC2 console that 5/6 m5.large machines are created by cluster autoscaler. The same can be seen in terminal by executing below command <br/>
   $ kubectl get nodes <br/>
-* Edit the "php-apache.yaml" file and update the replicas back to 1 and reapply executing below command <br/>
+* Edit the "php-apache.yaml" file and update the replicas back to 1 and reapply executing below command. It would take 10 mins for the scale down operation <br/>
   $ kubectl apply -f php-apache.yaml <br/> 
 * By default, cluster autoscaler will wait 10 minutes between scale down operations, which can be adjusted using the --scale-down-delay-after-add, --scale-down-delay-after-delete, and --scale-down-delay-after-failure flag. E.g. --scale-down-delay-after-add=5m to decrease the scale down delay to 5 minutes after a node has been added. <br/>
 #### Further references <br/>
