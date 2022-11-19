@@ -40,3 +40,4 @@ This repo demonstrates the cluster autoscaling feature of K8S. Together with HPA
 * By default, cluster autoscaler will wait 10 minutes between scale down operations, which can be adjusted using the --scale-down-delay-after-add, --scale-down-delay-after-delete, and --scale-down-delay-after-failure flag. E.g. --scale-down-delay-after-add=5m to decrease the scale down delay to 5 minutes after a node has been added. <br/>
 #### Further references <br/>
 * [Cluster Autoscaler on AWS](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md)<br/>
+* [Kubernetes Cluster Autoscaler - EKS Best Practices Guides](https://aws.github.io/aws-eks-best-practices/cluster-autoscaling/)<br/>
