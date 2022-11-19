@@ -36,4 +36,4 @@ This repo demonstrates the cluster autoscaling feature of K8S. Together with HPA
   $ kubectl get nodes <br/>
 * Edit the "php-apache.yaml" file and update the replicas back to 1 and reapply executing below command <br/>
   $ kubectl apply -f php-apache.yaml <br/> 
-* While scaling down the cluster autoscaler has a cool off period of 10 mins. So after ~10+ mins it can be seen that the cluster is scaled back to 2 m5.large EC2 instances. <br/>
+* While scaling down the cluster autoscaler has a cool off period of 10 mins. So after ~10+ mins it can be seen that the cluster is scaled down to 2 m5.large EC2 instances. <br/>
