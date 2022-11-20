@@ -12,7 +12,7 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * Region us-east-1 gives some issues with availability zones. It maybe convinient to choose some other AWS region. Here us-west-2 is chosen (aws configure) <br/>
 * Create a cluster with below command. It would create 2 m5.large EC2 instances in region configured in your CLI (AWS configure).<br/>
   $ eksctl create cluster --name my-cluster --version 1.23 --managed --asg-access <br/>
-* Create or update a kubeconfig file for the cluster. Replace region-code with the AWS Region that the cluster is in and replace my-cluster with the name of the cluster. <br/>
+* Create or update a kubeconfig file for the cluster. Replace region-code with the AWS Region that the cluster is in and replace my-cluster with the name of the cluster (then kubectl commands can be run on the created cluster). <br/>
   $ aws eks update-kubeconfig --region region-code --name my-cluster <br/>
 * Please complete the prerequisites as mentioned in official AWS documentation shared above. <br/>
 * Create an IAM policy (AmazonEKSClusterAutoscalerPolicy) and paste the JSON code from the text file "AmazonEKSClusterAutoscalerPolicy.txt" <br/>
