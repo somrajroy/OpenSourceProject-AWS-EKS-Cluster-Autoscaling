@@ -1,5 +1,5 @@
-# AWS EKS Cluster Autoscaling
-This repo demonstrates the cluster autoscaling feature of K8S. Together with HPA a production level K8S cluster can be deployed in AWS EKS with very less operational/management overhead. <br/><br/>
+## AWS EKS Cluster Autoscaling
+This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * To adjust to changing application demands clusters often need a way to automatically scale. In AWS EKS clusters automatic scaling is done primarily in two ways -  Cluster Autoscaler and Horizental Pod Autoscaler<br/>
   * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes. <br/>
     ![image](https://user-images.githubusercontent.com/92582005/202852434-dbf37c5a-e2a7-4783-b379-dbb693d729bd.png) <br/>
