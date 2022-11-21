@@ -26,6 +26,7 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
   $ kubectl -n kube-system annotate deployment.apps/cluster-autoscaler cluster-autoscaler.kubernetes.io/safe-to-evict="false" <br/>
 * As mentioned in official documentation edit the Cluster Autoscaler deployment with options "--balance-similar-node-groups" and "--skip-nodes-with-system-pods=false" <br/>
 * Set the Cluster Autoscaler image tag as from the official Github page as mentioned in the official AWS documentation <br/>
+  $ kubectl set image deployment cluster-autoscaler -n kube-system cluster-autoscaler=k8s.gcr.io/autoscaling/cluster-autoscaler:v1.23.0 <br/>
 * View and verify the cluster autoscaler logs to ensure its working properly & monitoring the cluster load  <br/>
 * Navigate to "Auto Scaling Group" in AWS EC2 console and update maximum capacity in autoscaling group to 6. (all values would be set to 2 - desired, minimum and maximum). Update the maximum value <br/>
 * Apply the deployment "php-apache.yaml" from this repo with below command. It would create 1 replica <br/>
