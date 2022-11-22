@@ -18,8 +18,8 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * (Optional)Create an IAM policy (AmazonEKSClusterAutoscalerPolicy) and paste the JSON code from the text file "AmazonEKSClusterAutoscalerPolicy.txt" <br/>
 * Create IAM role and service account with below command (replace the --attach-policy-arn with the ARN of the policy created by EKSTL or above created role)<br/>
 * If you created your node groups using the --asg-access option, then replace the name of the IAM policy with that eksctl created for you. The policy name is similar to eksctl-my-cluster-nodegroup-ng-xxxxxxxx-PolicyAutoScaling. (Optionally) If you created policy AmazonEKSClusterAutoscalerPolicy then use that. <br/>
- * Replace the account ID with the one that is being used. <br/>
- * Replace the policy name "eksctl-my-cluster-nodegroup-ng-ae84bd0e-PolicyAutoScaling" with the one eksctl created for you <br/>
+  * Replace the account ID with the one that is being used. <br/>
+  * Replace the policy name "eksctl-my-cluster-nodegroup-ng-ae84bd0e-PolicyAutoScaling" with the one eksctl created for you <br/>
   $ eksctl create iamserviceaccount --cluster=my-cluster --namespace=kube-system --name=cluster-autoscaler --attach-policy-arn=arn:aws:iam::<<-your account id->>:policy/eksctl-my-cluster-nodegroup-ng-ae84bd0e-PolicyAutoScaling --override-existing-serviceaccounts --approve <br/>
 * Check created service account and role. Check annotations and role should be there <br/>
   $ kubectl describe sa -n kube-system cluster-autoscaler <br/>
