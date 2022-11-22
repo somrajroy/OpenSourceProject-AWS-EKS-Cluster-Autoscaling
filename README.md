@@ -25,6 +25,8 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * To add the cluster-autoscaler.kubernetes.io/safe-to-evict annotation, execute below command (the patch command given in official documentation sometimes does not work)<br/>
   $ kubectl -n kube-system annotate deployment.apps/cluster-autoscaler cluster-autoscaler.kubernetes.io/safe-to-evict="false" <br/>
 * As mentioned in official documentation edit the Cluster Autoscaler deployment with options "--balance-similar-node-groups" and "--skip-nodes-with-system-pods=false" <br/>
+* (Optional) Verify the deployment.<br/>
+  $ kubectl describe deployment -n kube-system cluster-autoscaler <br/>
 * Set the Cluster Autoscaler image tag as from the official Github page as mentioned in the official AWS documentation <br/>
   $ kubectl set image deployment cluster-autoscaler -n kube-system cluster-autoscaler=k8s.gcr.io/autoscaling/cluster-autoscaler:v1.23.0 <br/>
 * View and verify the cluster autoscaler logs to ensure its working properly & monitoring the cluster load  <br/>
