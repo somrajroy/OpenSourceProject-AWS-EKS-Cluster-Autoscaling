@@ -15,9 +15,9 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * Create or update a kubeconfig file for the cluster. Replace region-code with the AWS Region that the cluster is in and replace my-cluster with the name of the cluster (then kubectl commands can be run on the created cluster). <br/>
   $ aws eks update-kubeconfig --region region-code --name my-cluster <br/>
 * Please complete the prerequisites as mentioned in official AWS documentation shared above. <br/>
-* Create an IAM policy (AmazonEKSClusterAutoscalerPolicy) and paste the JSON code from the text file "AmazonEKSClusterAutoscalerPolicy.txt" <br/>
-* Create IAM role and service account with below command (replace the --attach-policy-arn with the ARN of the policy created above)<br/>
-  $ eksctl create iamserviceaccount --cluster=my-cluster --namespace=kube-system --name=cluster-autoscaler --attach-policy-arn=arn:aws:iam::127538279091:policy/AmazonEKSClusterAutoscalerPolicy --override-existing-serviceaccounts --approve <br/>
+* (Optional)Create an IAM policy (AmazonEKSClusterAutoscalerPolicy) and paste the JSON code from the text file "AmazonEKSClusterAutoscalerPolicy.txt" <br/>
+* Create IAM role and service account with below command (replace the --attach-policy-arn with the ARN of the policy created by EKSTL or above created role)<br/>
+  $ eksctl create iamserviceaccount --cluster=my-cluster --namespace=kube-system --name=cluster-autoscaler --attach-policy-arn=eksctl-my-cluster-nodegroup-ng-a623fdc1-PolicyAutoScaling --override-existing-serviceaccounts --approve <br/>
 * Check created service account and role. Check annotations and role should be there <br/>
   $ kubectl describe sa -n kube-system cluster-autoscaler <br/>
 * [Deploy the Cluster Autoscaler](https://docs.aws.amazon.com/eks/latest/userguide/autoscaling.html#Deploy%20the%20Cluster%20Autoscaler:~:text=for%20Linux%20Instances.-,Deploy%20the%20Cluster%20Autoscaler,-Complete%20the%20following)<br/>
