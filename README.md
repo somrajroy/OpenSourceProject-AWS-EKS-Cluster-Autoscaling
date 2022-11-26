@@ -2,11 +2,11 @@
 This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * To adjust to changing application demands clusters often need a way to automatically scale. In AWS EKS clusters automatic scaling is done primarily in two ways -  Cluster Autoscaler and Horizental Pod Autoscaler<br/>
   * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes. The below diagrams makes it clear about cluster autoscaler functionality.<br/>
+  * Kubernetes uses the horizontal pod autoscaler (HPA) to monitor the resource demand and automatically scale the number of replicas. By default, the horizontal pod autoscaler checks the Metrics API. The horizontal pod autoscaler uses the Metrics Server in a Kubernetes cluster to monitor the resource demand of pods. If an application needs more resources, the number of pods is automatically increased to meet the demand.<br/>
+  * The below diagrams makes it clear about cluster autoscaler functionality. <br/>
     ![image](https://user-images.githubusercontent.com/92582005/202852434-dbf37c5a-e2a7-4783-b379-dbb693d729bd.png) <br/>
     ![image](https://user-images.githubusercontent.com/92582005/204074338-7fd0e500-7a19-4216-b084-087362471888.png) <br/>
-  * Kubernetes uses the horizontal pod autoscaler (HPA) to monitor the resource demand and automatically scale the number of replicas. By default, the horizontal pod autoscaler checks the Metrics API. The horizontal pod autoscaler uses the Metrics Server in a Kubernetes cluster to monitor the resource demand of pods. If an application needs more resources, the number of pods is automatically increased to meet the demand.<br/>
-  ![image](https://user-images.githubusercontent.com/92582005/202852404-b34021e2-856d-440b-8e0c-eaaf0fc5322f.png) <br/>
-* The cluster and horizontal pod autoscalers can work together, and are often both deployed in a cluster. When combined, the horizontal pod autoscaler is focused on running the number of pods required to meet application demand. The cluster autoscaler is focused on running the number of nodes required to support the scheduled pods. <br/>
+   * The cluster and horizontal pod autoscalers can work together, and are often both deployed in a cluster. When combined, the horizontal pod autoscaler is focused on running the number of pods required to meet application demand. The cluster autoscaler is focused on running the number of nodes required to support the scheduled pods. <br/>
 * [This official AWS Documentation mentions the steps to implement EKS Cluster Autoscaling. In this article we will use Kubernetes Cluster Autoscaler](https://docs.aws.amazon.com/eks/latest/userguide/autoscaling.html) <br/>
 * Some steps does not work properly from the above documentation which will be highlighted here <br/>
 #### Steps for Cluster Autoscaling with Kubernetes Cluster Autoscaler <br/>
