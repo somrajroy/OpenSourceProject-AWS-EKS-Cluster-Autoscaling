@@ -40,7 +40,7 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 * We can see that 2 EC2 m5.large machines are in cluster. <br/>
 * Edit the "php-apache.yaml" file and update the replicas to 20 and reapply executing below command <br/>
   $ kubectl apply -f php-apache.yaml <br/> 
-* Now 20 pods are required with 500m CPU which is is equivalent to 5 m5.large EC2 instances. <br/>
+* Now 20 pods are required with 500m CPU which is is equivalent to 5 m5.large EC2 instances. Many pods will be in pending status (not running). This would trigger CA<br/>
 * Check the activities tab in the autoscaling group and it can be seen that new instances are created. It checks the cluster load every 10 seconds <br/>
 * In few mins it can be seen in EC2 console that 5/6 m5.large machines are created by cluster autoscaler. The same can be seen in terminal by executing below command <br/>
   $ kubectl get nodes <br/>
