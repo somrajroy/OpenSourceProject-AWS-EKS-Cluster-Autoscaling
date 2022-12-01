@@ -53,3 +53,4 @@ This repo demonstrates the cluster autoscaling feature of K8S. <br/><br/>
 #### Further references <br/>
 * [Cluster Autoscaler on AWS](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md)<br/>
 * [Kubernetes Cluster Autoscaler - EKS Best Practices Guides](https://aws.github.io/aws-eks-best-practices/cluster-autoscaling/)<br/>
+* [Cost optimization for Kubernetes on AWS](https://aws.amazon.com/blogs/containers/cost-optimization-for-kubernetes-on-aws/)<br/>
